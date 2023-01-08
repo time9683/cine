@@ -17,7 +17,7 @@ export const  handler:Handlers ={
 
 
 try{
-const peliculasReponse =  await fetch("https://time9683-cine.deno.dev/api/peliculas")
+const peliculasReponse =  await fetch("/api/peliculas")
 console.log(peliculasReponse)
 // const  Peliculas = await peliculasReponse.json()
 // const sliders = await (await fetch("https://time9683-cine.deno.dev/api/sliders")).json()
