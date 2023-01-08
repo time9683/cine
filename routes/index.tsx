@@ -4,7 +4,8 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import { Pelicula } from "../scrapper.ts";
 import Carrusel from "../islands/Carrusel.tsx";
 import BtnLink from "../components/linkBtn.tsx";
-
+import peliculas from '../bd/peliculas.json'
+import sliders from '../bd/sliders.json'
 
 
 
@@ -17,12 +18,8 @@ export const  handler:Handlers ={
 
 
 try{
-const peliculasReponse =  await fetch("https://time9683-cine.deno.dev/api/peliculas")
-console.log(peliculasReponse)
-// const  Peliculas = await peliculasReponse.json()
-// const sliders = await (await fetch("https://time9683-cine.deno.dev/api/sliders")).json()
-// console.log({peliculas})
-return ctx.render({Peliculas:[]});
+
+return ctx.render({peliculas,sliders});
 }
 catch (err) {
 console.log(err)
