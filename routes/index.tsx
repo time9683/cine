@@ -17,10 +17,11 @@ export const  handler:Handlers ={
 
 
 try{
-// const peliculas =  await (await fetch("https://time9683-cine.deno.dev/api/peliculas") ).json()
-const sliders = await (await fetch("https://time9683-cine.deno.dev/api/sliders")).json()
+const peliculasReponse =  await fetch("https://time9683-cine.deno.dev/api/peliculas")
+const  Peliculas = await peliculasReponse.json()
+// const sliders = await (await fetch("https://time9683-cine.deno.dev/api/sliders")).json()
 // console.log({peliculas})
-return ctx.render({peliculas:[],sliders:sliders});
+return ctx.render({Peliculas});
 }
 catch (err) {
 console.log(err)
