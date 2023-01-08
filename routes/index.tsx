@@ -16,7 +16,7 @@ export const  handler:Handlers ={
   async GET(_,ctx){
 const peliculas =  await (await fetch("https://time9683-cine.deno.dev/api/peliculas") ).json()
 const sliders = await (await fetch("https://time9683-cine.deno.dev/api/sliders")).json()
-
+console.log({peliculas,sliders})
 return ctx.render({peliculas,sliders});
 
 
