@@ -78,8 +78,9 @@ export default function Home({data}:PageProps) {
 
         </nav>
           
+          <img src="/Bannet.jpg" alt="banner" class="pr-5 pl-5 w-full mt-10" />
 
-     <div class="grid    grid-cols-2  pt-4 pb-10 pr-8 pl-8 gap-2  md:grid-cols-3 lg:grid-cols-4"> 
+     <div class="grid    grid-cols-2  pt-4 pb-10 pr-5 pl-5 gap-2  md:grid-cols-3 lg:grid-cols-4"> 
 
       {  data.peliculas.filter( (p:Pelicula) =>       !p.name.includes("3D") && !p.name.includes('(Sub)')                ).map( (p : Pelicula,index:number)=>{
             if(index > 7) return ;
