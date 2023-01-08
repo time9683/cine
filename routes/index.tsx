@@ -18,10 +18,11 @@ export const  handler:Handlers ={
 
 try{
 const peliculasReponse =  await fetch("https://time9683-cine.deno.dev/api/peliculas")
-const  Peliculas = await peliculasReponse.json()
+console.log(peliculasReponse)
+// const  Peliculas = await peliculasReponse.json()
 // const sliders = await (await fetch("https://time9683-cine.deno.dev/api/sliders")).json()
 // console.log({peliculas})
-return ctx.render({Peliculas});
+return ctx.render({Peliculas:[]});
 }
 catch (err) {
 console.log(err)
