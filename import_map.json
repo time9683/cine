@@ -1,0 +1,33 @@
+{
+  "imports": {
+    "$fresh/": "https://deno.land/x/fresh@1.1.2/",
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.0.1",
+    "@preact/signals": "https://esm.sh/*@preact/signals@1.0.3",
+    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@5.2.4",
+    "preact": "https://esm.sh/preact@10.11.0",
+    "preact/": "https://esm.sh/preact@10.11.0/",
+    "twind": "https://esm.sh/twind@0.16.17",
+    "twind/": "https://esm.sh/twind@0.16.17/",
+    "cheerio": "https://esm.sh/v102/*cheerio@0.22.0"
+  },
+  "scopes": {
+    "cheerio": {
+      "css-select": "https://esm.sh/v102/css-select@1.2.0",
+      "dom-serializer": "https://esm.sh/v102/dom-serializer@0.1.1",
+      "entities": "https://esm.sh/v102/entities@1.1.2",
+      "htmlparser2": "https://esm.sh/v102/htmlparser2@3.10.1",
+      "lodash.assignin": "https://esm.sh/v102/lodash.assignin@4.2.0",
+      "lodash.bind": "https://esm.sh/v102/lodash.bind@4.2.1",
+      "lodash.defaults": "https://esm.sh/v102/lodash.defaults@4.2.0",
+      "lodash.filter": "https://esm.sh/v102/lodash.filter@4.6.0",
+      "lodash.flatten": "https://esm.sh/v102/lodash.flatten@4.4.0",
+      "lodash.foreach": "https://esm.sh/v102/lodash.foreach@4.5.0",
+      "lodash.map": "https://esm.sh/v102/lodash.map@4.6.0",
+      "lodash.merge": "https://esm.sh/v102/lodash.merge@4.6.2",
+      "lodash.pick": "https://esm.sh/v102/lodash.pick@4.4.0",
+      "lodash.reduce": "https://esm.sh/v102/lodash.reduce@4.6.0",
+      "lodash.reject": "https://esm.sh/v102/lodash.reject@4.6.0",
+      "lodash.some": "https://esm.sh/v102/lodash.some@4.6.0"
+    }
+  }
+}
