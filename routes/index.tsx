@@ -14,10 +14,20 @@ import BtnLink from "../components/linkBtn.tsx";
 
 export const  handler:Handlers ={
   async GET(_,ctx){
+
+
+try{
 const peliculas =  await (await fetch("https://time9683-cine.deno.dev/api/peliculas") ).json()
 const sliders = await (await fetch("https://time9683-cine.deno.dev/api/sliders")).json()
 console.log({peliculas,sliders})
 return ctx.render({peliculas,sliders});
+}
+catch (err) {
+console.log(err)
+return ctx.render({peliculas:[],sliders:[]})
+
+}
+
 
 
 }
