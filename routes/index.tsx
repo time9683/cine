@@ -2,17 +2,22 @@ import { Head } from "$fresh/runtime.ts";
 import Menu from "../islands/Menu.tsx";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { Pelicula } from "../scrapper.ts";
+import Carrusel from "../islands/Carrusel.tsx";
+import BtnLink from "../components/linkBtn.tsx";
+
+
+
+
 
 
 
 
 export const  handler:Handlers ={
   async GET(_,ctx){
-const peliculas =  await (await fetch("http://localhost:8000/api/peliculas?limit=8") ).json()
+const peliculas =  await (await fetch("http://localhost:8000/api/peliculas") ).json()
+const sliders = await (await fetch("http://localhost:8000/api/sliders")).json()
 
-
-
-return ctx.render(peliculas);
+return ctx.render({peliculas,sliders});
 
 
 }
@@ -21,6 +26,7 @@ return ctx.render(peliculas);
 }
 
 export default function Home({data}:PageProps) {
+
 
 
 
@@ -41,23 +47,24 @@ export default function Home({data}:PageProps) {
 
         
         <main>
-        <nav class="">
+        <nav class=" lg:grid   grid-cols-[auto_auto] pr-5 pl-5  lg:pr-8 lg:pl-8 mt-2">
          
-         <ul class="text(white) flex flex-row place-content-center ">
-          <li class="bg-gradient-to-b  from-[#c02328] border-1     via-[#c02328]  to-[#890406] p-[9px] text-center grid  place-content-center w-1/3">
-            <img  src="/peliculas.png" alt="" />
-            Peliculas
-            
-            
-            </li>
-          <li class="bg-gradient-to-b  from-[#c02328]   border-1  via-[#c02328]  to-[#890406] p-[9px] text-center place-content-center grid w-1/3">
-            <img src="/cines.png" alt="" />
-            Cines</li>
-          <li class="bg-gradient-to-b  from-[#c02328]  border-1  via-[#c02328]  to-[#890406]   text-center  grid place-content-center  p-[9px] w-1/3">
-             <img src="/estrenos.png" alt="" />
-            Estrenos</li>
-         </ul>
+         <ul class="text-white flex flex-row lg:flex-col   place-content-center ">
+              
+            <BtnLink image="/peliculas.png" text="Peliculas"/>
+           
+           <BtnLink  image="/cines.png" text="cines" />
+           <BtnLink  image="/estrenos.png" text="Proximos Estrenos" />
+
+
+      </ul>
          {/* linear-gradient(to bottom, #c02328 1%,#c02328 15%,#890406 100%); */}
+
+
+        {
+         <Carrusel  sliders={data.sliders}  />
+        }
+
 
 
         </nav>
@@ -65,9 +72,9 @@ export default function Home({data}:PageProps) {
 
      <div class="grid    grid-cols-2  pt-4 pb-10 pr-8 pl-8 gap-2  md:grid-cols-3 lg:grid-cols-4"> 
 
-      {  data.map( (p : Pelicula)=>{
-
-        return <div class="group text-white"  ><img  class="group-hover:(scale-105 cursor-pointer  translate-x-3 -translate-y-5 ) transition rounded-sm" src={p.img} alt={p.name} /></div>
+      {  data.peliculas.filter( (p:Pelicula) =>       !p.name.includes("3D") && !p.name.includes('(Sub)')                ).map( (p : Pelicula,index:number)=>{
+            if(index > 7) return ;
+        return <div class="group text-white   "  ><img  class="group-hover:scale-105 group-hover:cursor-pointer  group-hover:translate-x-3 group-hover:-translate-y-5  shadow-sm shadow-gray-200/50 transition rounded-sm" src={p.img} alt={p.name} /></div>
 
       })}
 
