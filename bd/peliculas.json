@@ -1,1 +1,107 @@
-[{"name":"M3gan (Esp)","img":"http://192.168.0.112:8000/poster/HO00004423.jpg","id":"HO00004423"},{"name":"M3gan (Sub)","img":"http://192.168.0.112:8000/poster/HO00004424.jpg","id":"HO00004424"},{"name":"Mar de Sangre (Esp)","img":"http://192.168.0.112:8000/poster/HO00004479.jpg","id":"HO00004479"},{"name":"Mar de Sangre (Sub)","img":"http://192.168.0.112:8000/poster/HO00004480.jpg","id":"HO00004480"},{"name":"Géminis El planeta oscuro (Esp)","img":"http://192.168.0.112:8000/poster/HO00004463.jpg","id":"HO00004463"},{"name":"Géminis El planeta oscuro (Sub)","img":"http://192.168.0.112:8000/poster/HO00004464.jpg","id":"HO00004464"},{"name":"Harvie Aventuras en el museo mágico (Esp)","img":"http://192.168.0.112:8000/poster/HO00004465.jpg","id":"HO00004465"},{"name":"El Exorcismo Del Demonio (Esp)","img":"http://192.168.0.112:8000/poster/HO00004483.jpg","id":"HO00004483"},{"name":"El Exorcismo Del Demonio (Sub)","img":"http://192.168.0.112:8000/poster/HO00004484.jpg","id":"HO00004484"},{"name":"Juego Perfecto (Esp)","img":"http://192.168.0.112:8000/poster/HO00004461.jpg","id":"HO00004461"},{"name":"Juego Perfecto (Sub)","img":"http://192.168.0.112:8000/poster/HO00004462.jpg","id":"HO00004462"},{"name":"Bob: El Gato Navideño (Esp)","img":"http://192.168.0.112:8000/poster/HO00004488.jpg","id":"HO00004488"},{"name":"Avatar: El Camino del Agua (Esp)","img":"http://192.168.0.112:8000/poster/HO00004317.jpg","id":"HO00004317"},{"name":"Avatar: El Camino del Agua (Sub)","img":"http://192.168.0.112:8000/poster/HO00004318.jpg","id":"HO00004318"},{"name":"Avatar: El Camino del Agua 3D (Esp)","img":"http://192.168.0.112:8000/poster/HO00004419.jpg","id":"HO00004419"},{"name":"Avatar: El Camino del Agua 3D (Sub)","img":"http://192.168.0.112:8000/poster/HO00004420.jpg","id":"HO00004420"},{"name":"El Gato con Botas: El Último Deseo (Esp)","img":"http://192.168.0.112:8000/poster/HO00004337.jpg","id":"HO00004337"},{"name":"Noche sin Paz (Esp)","img":"http://192.168.0.112:8000/poster/HO00004396.jpg","id":"HO00004396"},{"name":"Pantera Negra: Wakanda Para Siempre (Esp)","img":"http://192.168.0.112:8000/poster/HO00004356.jpg","id":"HO00004356"},{"name":"Pantera Negra: Wakanda Para Siempre (Sub)","img":"http://192.168.0.112:8000/poster/HO00004357.jpg","id":"HO00004357"},{"name":"Black Adam (Esp)","img":"http://192.168.0.112:8000/poster/HO00004331.jpg","id":"HO00004331"}]
+[
+  {
+    "name": "M3gan (Esp)",
+    "img": "https://time9683-cine.deno.dev/poster/HO00004423.jpg",
+    "id": "HO00004423"
+  },
+  {
+    "name": "M3gan (Sub)",
+    "img": "https://time9683-cine.deno.dev/poster/HO00004424.jpg",
+    "id": "HO00004424"
+  },
+  {
+    "name": "Mar de Sangre (Esp)",
+    "img": "https://time9683-cine.deno.dev/poster/HO00004479.jpg",
+    "id": "HO00004479"
+  },
+  {
+    "name": "Mar de Sangre (Sub)",
+    "img": "https://time9683-cine.deno.dev/poster/HO00004480.jpg",
+    "id": "HO00004480"
+  },
+  {
+    "name": "Géminis El planeta oscuro (Esp)",
+    "img": "https://time9683-cine.deno.dev/poster/HO00004463.jpg",
+    "id": "HO00004463"
+  },
+  {
+    "name": "Géminis El planeta oscuro (Sub)",
+    "img": "https://time9683-cine.deno.dev/poster/HO00004464.jpg",
+    "id": "HO00004464"
+  },
+  {
+    "name": "Harvie Aventuras en el museo mágico (Esp)",
+    "img": "https://time9683-cine.deno.dev/poster/HO00004465.jpg",
+    "id": "HO00004465"
+  },
+  {
+    "name": "El Exorcismo Del Demonio (Esp)",
+    "img": "https://time9683-cine.deno.dev/poster/HO00004483.jpg",
+    "id": "HO00004483"
+  },
+  {
+    "name": "El Exorcismo Del Demonio (Sub)",
+    "img": "https://time9683-cine.deno.dev/poster/HO00004484.jpg",
+    "id": "HO00004484"
+  },
+  {
+    "name": "Juego Perfecto (Esp)",
+    "img": "https://time9683-cine.deno.dev/poster/HO00004461.jpg",
+    "id": "HO00004461"
+  },
+  {
+    "name": "Juego Perfecto (Sub)",
+    "img": "https://time9683-cine.deno.dev/poster/HO00004462.jpg",
+    "id": "HO00004462"
+  },
+  {
+    "name": "Bob: El Gato Navideño (Esp)",
+    "img": "https://time9683-cine.deno.dev/poster/HO00004488.jpg",
+    "id": "HO00004488"
+  },
+  {
+    "name": "Avatar: El Camino del Agua (Esp)",
+    "img": "https://time9683-cine.deno.dev/poster/HO00004317.jpg",
+    "id": "HO00004317"
+  },
+  {
+    "name": "Avatar: El Camino del Agua (Sub)",
+    "img": "https://time9683-cine.deno.dev/poster/HO00004318.jpg",
+    "id": "HO00004318"
+  },
+  {
+    "name": "Avatar: El Camino del Agua 3D (Esp)",
+    "img": "https://time9683-cine.deno.dev/poster/HO00004419.jpg",
+    "id": "HO00004419"
+  },
+  {
+    "name": "Avatar: El Camino del Agua 3D (Sub)",
+    "img": "https://time9683-cine.deno.dev/poster/HO00004420.jpg",
+    "id": "HO00004420"
+  },
+  {
+    "name": "El Gato con Botas: El Último Deseo (Esp)",
+    "img": "https://time9683-cine.deno.dev/poster/HO00004337.jpg",
+    "id": "HO00004337"
+  },
+  {
+    "name": "Noche sin Paz (Esp)",
+    "img": "https://time9683-cine.deno.dev/poster/HO00004396.jpg",
+    "id": "HO00004396"
+  },
+  {
+    "name": "Pantera Negra: Wakanda Para Siempre (Esp)",
+    "img": "https://time9683-cine.deno.dev/poster/HO00004356.jpg",
+    "id": "HO00004356"
+  },
+  {
+    "name": "Pantera Negra: Wakanda Para Siempre (Sub)",
+    "img": "https://time9683-cine.deno.dev/poster/HO00004357.jpg",
+    "id": "HO00004357"
+  },
+  {
+    "name": "Black Adam (Esp)",
+    "img": "http://https://time9683-cine.deno.dev/poster/HO00004331.jpg",
+    "id": "HO00004331"
+  }
+]
