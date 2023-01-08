@@ -78,7 +78,7 @@ export default function Home({data}:PageProps) {
 
         </nav>
           
-          <img src="/Bannet.jpg" alt="banner" class="pr-5 pl-5 w-full mt-10" />
+          <img src="/Bannet.jpg" alt="banner" class="pr-5 pl-5 w-full mt-5" />
 
      <div class="grid    grid-cols-2  pt-4 pb-10 pr-5 pl-5 gap-2  md:grid-cols-3 lg:grid-cols-4"> 
 
