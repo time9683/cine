@@ -27,7 +27,7 @@ export default function Card({ link, logo, value }: props) {
         src={logo}
         alt="imagen pelicula"
       />
-      <span class="text-2xl uppercase text-white group-hover:translate-y-2  group-hover:[text-shadow:_0px_0px_10px_#fff] transition-all ">
+      <span class="lg:text-2xl text-center uppercase text-white group-hover:translate-y-2  group-hover:[text-shadow:_0px_0px_10px_#fff] transition-all ">
         {value}
       </span>
     </a>
