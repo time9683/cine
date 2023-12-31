@@ -32,8 +32,8 @@ export default function Carrusel() {
       data-carousel="slide"
     >
       {/* <!-- Carousel wrapper --> */}
-      <div class="relative  overflow-hidden h-[432px]">
-        {/* <!-- Item 1 --> */}
+      <div class="relative  overflow-hidden  h-[170px] sm:h-[250px] md:h-[432px]">
+        {/*<!--  Item -->*/}
         {images.map((image, index) => (
           <ItemC image={image} index={index} signal={Index} />
         ))}
@@ -108,7 +108,7 @@ function ItemC(
     >
       <img
         src={image}
-        class={` block object-cover h-full  w-full  `}
+        class={` block object-contain md:object-cover h-full  w-full  `}
         alt="..."
       />
     </div>
