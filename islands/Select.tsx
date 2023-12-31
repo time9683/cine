@@ -38,7 +38,7 @@ export default function Select() {
     <div
       role="select"
       tabindex={0}
-      class=" focus:outline-none relative group"
+      class=" focus:outline-none relative group self-end sm:self-auto"
       onfocusout={addExit}
       onClick={() => {
         if (!divItems.current) return;

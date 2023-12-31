@@ -13,13 +13,11 @@ import ImageDialog from "../islands/dialog-image.tsx";
 
 import { useSignal } from "@preact/signals";
 export default function Home() {
-  const openDialog = useSignal(false);
-
   return (
     <div class="bg-black h-auto">
       <header class="">
         <nav class="bg-zinc-800 p-3">
-          <ul class="flex gap-4 text-xs text-zinc-400 justify-center">
+          <ul class=" gap-4 text-xs text-zinc-400 justify-center hidden sm:flex">
             <li>INICIO</li>
             <li>ESTRENOS</li>
             <li>PUBLICIDAD Y EVENTOS</li>
@@ -31,7 +29,7 @@ export default function Home() {
         </nav>
 
         <div class="bg-red-700">
-          <div class=" flex justify-between p-3  max-w-full sm:max-w-xl  md:max-w-3xl lg:max-w-6xl m-auto">
+          <div class=" flex  flex-col sm:flex-row  justify-between p-3  max-w-full sm:max-w-xl  md:max-w-3xl lg:max-w-6xl m-auto ">
             <img src="/cine_unido.png" />
             <Select />
           </div>
@@ -71,7 +69,7 @@ export default function Home() {
           preventas
         </div>
         <ImageDialog />
-        <div class="flex mt-5 mb-5 w-full justify-center items-center ">
+        <div class="flex  flex-col sm:flex-row  mt-5 mb-5 w-full justify-center items-center ">
           <a>
             <img
               class=""
@@ -92,7 +90,7 @@ export default function Home() {
             />
           </a>
         </div>
-        <section class="grid grid-cols-3 lg:grid-cols-4 mt-2">
+        <section class="grid  grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 mt-2">
           <MovieCard
             link="#"
             logo="https://cinesunidosweb.blob.core.windows.net/poster/HO00004646.jpg"
@@ -147,7 +145,7 @@ export default function Home() {
           </ul>
         </nav>
 
-        <p class="text-gray-400 text-xs">
+        <p class="text-gray-400 text-xs text-center ">
           © CopyRight 2015. Todos los derechos reservados. Compañía Anónima
           Empresa Cines Unidos. RIF.:J-00012651-8
         </p>
