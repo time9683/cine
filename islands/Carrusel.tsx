@@ -2,10 +2,10 @@ import { effect, Signal, useSignal } from "@preact/signals";
 import Arrow from "../components/svgs/Arrow.tsx";
 
 const images = [
-  "https://cinesunidosweb.blob.core.windows.net/slider/HO00004646.jpg",
-  "https://cinesunidosweb.blob.core.windows.net/slider/HO00004791.jpg",
-  "https://cinesunidosweb.blob.core.windows.net/slider/HO00004775.jpg",
-  "https://placehold.co/855x422",
+  "/HO00004646.webp",
+  "/HO00004791.webp",
+  "/HO00004775.webp",
+  "/855x422.webp",
 ];
 
 export default function Carrusel() {

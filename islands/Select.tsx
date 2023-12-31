@@ -36,7 +36,6 @@ export default function Select() {
 
   return (
     <div
-      role="select"
       tabindex={0}
       class=" focus:outline-none relative group self-end sm:self-auto"
       onfocusout={addExit}
@@ -48,21 +47,28 @@ export default function Select() {
           : addExit();
       }}
     >
-      <span class="hover:text-gray-100 gap-2 cursor-pointer text-3xl uppercase text-white group-focus:text-gray-100 flex items-center">
+      <label
+        id="label1"
+        class="hover:text-gray-100 gap-2 cursor-pointer text-3xl uppercase text-white group-focus:text-gray-100 flex items-center"
+      >
         {selected.value}
         <Arrow
           class={`w-6 h-auto transition-all time duration-500 text-white  ${
             Open.value ? "rotate-180" : ""
           }  `}
         />
-      </span>
+      </label>
       <div
+        id="list"
+        role="listbox"
+        aria-labelledby="label1"
         ref={divItems}
         class={`hidden absolute p-1 bg-white w-36 right-0 top-12 border border-gray-200 z-20`}
       >
         {REGIONS.map((region) => (
           <div
             role="option"
+            aria-selected={selected.value === region}
             class=" text-lg cursor-pointer p-1  border-b w-full text-right text-red-700  border-red-700 z-30  
             hover:bg-red-700 hover:text-white
             

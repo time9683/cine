@@ -18,6 +18,7 @@ export default function imageDialog() {
           if (!ref.current) return;
           ref.current?.showModal();
         }}
+        alt="El Cascanueces entradas"
         src="https://az693035.vo.msecnd.net/mercadeo/banner-el-cascanueces.jpg"
       />
       <Dialog
