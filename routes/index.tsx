@@ -11,7 +11,6 @@ import Android from "../components/svgs/Android.tsx";
 
 import ImageDialog from "../islands/dialog-image.tsx";
 
-import { useSignal } from "@preact/signals";
 export default function Home() {
   return (
     <div class="bg-black h-auto">
