@@ -8,8 +8,8 @@ export async function scrapeHome($: cheerio.CheerioAPI) {
   const banners: string[] = [];
   // check if banners folder exist
   const bannersFolder = join(Deno.cwd(), "static", "banners");
-  exists(bannersFolder).then((exist) => {
-    if (!exist) Deno.mkdirSync(bannersFolder);
+  exists(bannersFolder).then(async (exist) => {
+    if (!exist) await Deno.mkdir(bannersFolder);
   });
 
   // get banners  from a class "pelivelotopimg"
