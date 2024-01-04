@@ -24,6 +24,8 @@ jobs:
       - name: Build step
         run : "deno task build"
 
+      - name: scrappe data
+        run : "deno task scrapper"
 
       - name: upload to deno
         uses: denoland/deployctl@v1  
