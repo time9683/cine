@@ -11,6 +11,8 @@ export function MovieCard({ value, logo }: props) {
       href="#"
     >
       <img
+        width={284}
+        height={407.95}
         class="object-cover"
         src={logo}
         alt={`imagen de la pelicula ${value}`}

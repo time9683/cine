@@ -23,7 +23,8 @@ export async function scrapeHome($: cheerio.CheerioAPI) {
   const promises = imgs.map(async (url, i) => {
     const imgBuffer = await fetch(url).then((res) => res.arrayBuffer());
     const output = join(Deno.cwd(), "static", "banners", i + ".webp");
-    await sharp(imgBuffer).webp({ effort: 6, quality: 75 }).toFile(output);
+    await sharp(imgBuffer).webp({ effort: 6, quality: 70 })
+      .toFile(output);
     console.log("done", i);
     banners.push("/banners/" + i + ".webp");
   });

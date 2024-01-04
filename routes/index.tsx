@@ -3,6 +3,7 @@ import Carrusel from "../islands/Carrusel.tsx";
 import { MovieCard } from "../components/movie-card.tsx";
 import ImageDialog from "../islands/dialog-image.tsx";
 import banners from "../db/banners.json" with { type: "json" };
+import movies from "../db/movies.json" with { type: "json" };
 import { Head } from "$fresh/runtime.ts";
 
 export default function Home() {
@@ -17,7 +18,11 @@ export default function Home() {
           property="og:description"
           content="Web de Cines Unidos donde puedes comprar tus entradas y ver las peliculas disponibles"
         />
-        <meta property="og:image" itemprop="image" content="https://cine.deno.dev/open.webp" />
+        <meta
+          property="og:image"
+          itemprop="image"
+          content="https://cine.deno.dev/open.webp"
+        />
         <meta property="og:updated_time" content="1440432930" />
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -89,26 +94,16 @@ export default function Home() {
           </a>
         </div>
         <section class="grid  grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 mt-2">
-          <MovieCard
-            link="#"
-            logo="https://cinesunidosweb.blob.core.windows.net/poster/HO00004646.jpg"
-            value="los choros"
-          />
-          <MovieCard
-            link="#"
-            logo="https://cinesunidosweb.blob.core.windows.net/poster/HO00004646.jpg"
-            value="los choros"
-          />
-          <MovieCard
-            link="#"
-            logo="https://cinesunidosweb.blob.core.windows.net/poster/HO00004646.jpg"
-            value="los choros"
-          />
-          <MovieCard
-            link="#"
-            logo="https://cinesunidosweb.blob.core.windows.net/poster/HO00004646.jpg"
-            value="los choros"
-          />
+          {movies.slice(0, 8).map((movie, index) => {
+            return (
+              <MovieCard
+                link="#"
+                logo={movie.src}
+                value={movie.title}
+                key={movie.id}
+              />
+            );
+          })}
         </section>
       </main>
     </>
