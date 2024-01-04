@@ -1,9 +1,15 @@
 import { join } from "$std/path/join.ts";
+import { exists } from "$std/fs/exists.ts";
 import * as cheerio from "https://esm.sh/cheerio@1.0.0-rc.12";
 import sharp from "npm:sharp";
 
 export async function scrapeHome($: cheerio.CheerioAPI) {
   const banners: string[] = [];
+  // check if banners folder exist
+  const bannersFolder = join(Deno.cwd(), "static", "banners");
+  exists(bannersFolder).then((exist) => {
+    if (!exist) Deno.mkdirSync(bannersFolder);
+  });
 
   // get banners  from a class "pelivelotopimg"
   $(".carousel-inner  .pelivelotopimg").each((i, el) => {
