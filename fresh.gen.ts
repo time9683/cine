@@ -8,6 +8,7 @@ import * as $_layout from "./routes/_layout.tsx";
 import * as $api_joke from "./routes/api/joke.ts";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
+import * as $movie_index from "./routes/movie/index.tsx";
 import * as $Carrusel from "./islands/Carrusel.tsx";
 import * as $Dialog from "./islands/Dialog.tsx";
 import * as $Select from "./islands/Select.tsx";
@@ -22,6 +23,7 @@ const manifest = {
     "./routes/api/joke.ts": $api_joke,
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
+    "./routes/movie/index.tsx": $movie_index,
   },
   islands: {
     "./islands/Carrusel.tsx": $Carrusel,

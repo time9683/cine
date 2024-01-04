@@ -1,19 +1,12 @@
 import { effect, Signal, useSignal } from "@preact/signals";
 import Arrow from "../components/svgs/Arrow.tsx";
 
-const images = [
-  "/HO00004646.webp",
-  "/HO00004791.webp",
-  "/HO00004775.webp",
-  "/855x422.webp",
-];
-
-export default function Carrusel() {
+export default function Carrusel({ banners }: { banners: string[] }) {
   const Index = useSignal(0);
 
   effect(() => {
     const interval = setInterval(() => {
-      const Items = images.length;
+      const Items = banners.length;
       if (Index.value === Items - 1) {
         Index.value = 0;
         return;
@@ -34,7 +27,7 @@ export default function Carrusel() {
       {/* <!-- Carousel wrapper --> */}
       <div class="relative  overflow-hidden  h-[170px] sm:h-[250px] md:h-[432px]">
         {/*<!--  Item -->*/}
-        {images.map((image, index) => (
+        {banners.map((image, index) => (
           <ItemC image={image} index={index} signal={Index} />
         ))}
       </div>
@@ -45,7 +38,7 @@ export default function Carrusel() {
         data-carousel-prev
         onClick={() => {
           if (Index.value === 0) {
-            Index.value = images.length - 1;
+            Index.value = banners.length - 1;
             return;
           }
           Index.value -= 1;

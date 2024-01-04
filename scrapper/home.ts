@@ -5,11 +5,11 @@ export async function scrapeHome($: cheerio.CheerioAPI) {
   const banners: string[] = [];
 
   // get banners  from a class "pelivelotopimg"
-  $(".pelivelotopimg").each((i, el) => {
+  $(".carousel-inner  .pelivelotopimg").each((i, el) => {
     console.log($(el).attr("src"));
     const url = $(el).attr("src");
     if (!url) return;
-    banners.push(url);
+    banners.push("/banners/" + i + ".webp");
 
     fetch(url!)
       .then((img) => img.arrayBuffer())
