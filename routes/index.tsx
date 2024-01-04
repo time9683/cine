@@ -9,14 +9,26 @@ export default function Home() {
   return (
     <>
       <Head>
-        <meta property="og:title" content="Cines Unidos" />
+        {/* <!-- Facebook Meta Tags --> */}
+        <meta property="og:url" content="https://cine.deno.dev/" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://cine.deno.dev" />
-        <meta property="og:image" content="/open.webp" />
+        <meta property="og:title" content="Cines Unidos" />
         <meta
           property="og:description"
           content="Web de Cines Unidos donde puedes comprar tus entradas y ver las peliculas disponibles"
         />
+        <meta property="og:image" itemprop="image" content="/open.webp" />
+        <meta property="og:updated_time" content="1440432930" />
+        {/* <!-- Twitter Meta Tags --> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="cine.deno.dev" />
+        <meta property="twitter:url" content="https://cine.deno.dev/" />
+        <meta name="twitter:title" content="Cines Unidos" />
+        <meta
+          name="twitter:description"
+          content="Web de Cines Unidos donde puedes comprar tus entradas y ver las peliculas disponibles"
+        />
+        <meta name="twitter:image" content="/open.webp" />
       </Head>
       <main class=" max-w-full sm:max-w-xl  md:max-w-3xl lg:max-w-6xl m-auto mt-2 p-2">
         <section class="flex flex-col lg:flex-row w-full">
