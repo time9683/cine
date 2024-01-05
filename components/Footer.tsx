@@ -7,7 +7,7 @@ import Youtube from "./svgs/Youtube.tsx";
 
 export default function Footer() {
   return (
-    <footer class="w-full bg-gradient-to-b from-neutral-600 to-neutral-800 flex flex-col justify-center items-center p-4 gap-4">
+    <footer class="w-full  bg-gradient-to-b from-neutral-600 to-neutral-800 flex flex-col justify-center items-center p-4 gap-4 absolute bottom-0">
       <img src="/cine_unido.webp" alt="" />
       <nav class="flex flex-col gap-7">
         <ul class="flex gap-4 justify-between text-white/80 items-center ">

@@ -55,8 +55,8 @@ export default function Movie(props: PageProps<movie>) {
             <h1 class="text-lg text-white">{props.data.title}</h1>
           </header>
 
-          <div class="flex">
-            <section class="flex  p-5 gap-4 border-r border-zinc-400 ">
+          <div class="flex gap-4 flex-col lg:flex-row p-4">
+            <section class="flex  p-5 gap-4  border-b lg:border-b-0  lg:border-r border-zinc-400 ">
               <img src={props.data.src} alt={props.data.title} class="w-48" />
               <p class="text-xs w-52 text-pretty">
                 Regreso de Arthur Curry, también conocido como Aquaman (Jason
