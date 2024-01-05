@@ -40,7 +40,7 @@ export default function Home() {
           <div class=" flex  lg:flex-col">
             <Card
               value="películas"
-              link="#"
+              link="/movie"
               logo="/peliculas.png"
             />
             <Card

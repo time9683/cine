@@ -41,7 +41,7 @@ export default async function scrapeMovies($: cheerio.CheerioAPI) {
   const promises = movies.map(async (movie, i) => {
     const imgBuffer = await fetch(movie.src).then((res) => res.arrayBuffer());
     const output = join(Deno.cwd(), "static", "movies", movie.id + ".webp");
-    await sharp(imgBuffer).resize({ width: 362, height: 520 }).webp({
+    await sharp(imgBuffer).webp({
       effort: 6,
       quality: 70,
     })

@@ -17,7 +17,9 @@ export default function Header() {
 
       <div class="bg-red-700">
         <div class=" flex  flex-col sm:flex-row  justify-between p-3  max-w-full sm:max-w-xl  md:max-w-3xl lg:max-w-6xl m-auto ">
-          <img src="/cine_unido.webp" alt="cines unidos logo" />
+          <a href="/">
+            <img src="/cine_unido.webp" alt="cines unidos logo" />
+          </a>
           <Select />
         </div>
       </div>
