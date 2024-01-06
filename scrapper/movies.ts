@@ -9,11 +9,10 @@ interface Movie {
   src: string;
 }
 const dbUrl = join(Deno.cwd(), "db", "movies.json");
+const moviesFolder = join(Deno.cwd(), "static", "movies");
 
 export default async function scrapeMovies($: cheerio.CheerioAPI) {
   const movies: Movie[] = [];
-  const MovieImages: string[] = [];
-  const moviesFolder = join(Deno.cwd(), "static", "movies");
   // make a new fetch to load html in $
   const webdata =
     await ((await fetch("https://www.cinesunidos.com/home/movie?city=Valencia"))
@@ -55,7 +54,7 @@ export default async function scrapeMovies($: cheerio.CheerioAPI) {
 
   const promises = movies.map(async (movie, i) => {
     const imgBuffer = await fetch(movie.src).then((res) => res.arrayBuffer());
-    const output = join(Deno.cwd(), "static", "movies", movie.id + ".webp");
+    const output = join(moviesFolder, movie.id + ".webp");
     await sharp(imgBuffer).webp({
       effort: 6,
       quality: 70,
