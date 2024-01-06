@@ -12,7 +12,7 @@ export const handler: Handlers<movie> = {
   GET(_req, ctx) {
     const movie = movies.find((movie) => movie.id === ctx.params.id);
     if (!movie) {
-      return Response.redirect("/");
+      return ctx.renderNotFound();
     }
     return ctx.render(movie);
   },
@@ -56,9 +56,9 @@ export default function Movie(props: PageProps<movie>) {
           </header>
 
           <div class="flex gap-4 flex-col lg:flex-row p-4">
-            <section class="flex  p-5 gap-4  border-b lg:border-b-0  lg:border-r border-zinc-400 ">
+            <section class="flex flex-col md:flex-row items-center  p-5 gap-4  border-b lg:border-b-0  lg:border-r border-zinc-400 ">
               <img src={props.data.src} alt={props.data.title} class="w-48" />
-              <p class="text-xs w-52 text-pretty">
+              <p class="text-xs lg:w-52 md:self-start text-pretty p-2">
                 Regreso de Arthur Curry, también conocido como Aquaman (Jason
                 Momoa), el heredero del reino submarino de Atlantis. Esta
                 película del universo cinematográfico de DC Cómics es la secuela
