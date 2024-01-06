@@ -8,6 +8,7 @@ interface Movie {
   title: string;
   src: string;
 }
+const dbUrl = join(Deno.cwd(), "db", "movies.json");
 
 export default async function scrapeMovies($: cheerio.CheerioAPI) {
   const movies: Movie[] = [];
@@ -40,8 +41,16 @@ export default async function scrapeMovies($: cheerio.CheerioAPI) {
 
   // verificar si se encuntran peliculas
   if (movies.length === 0) {
-    console.log("movie not found,scrapper stop");
-    return;
+    console.log("movie not found,scrapper change to background default movies");
+    const dbMovies = JSON.parse(
+      await Deno.readTextFile(join(Deno.cwd(), "db", "movies.json")),
+    );
+    for (let i = 0; i < dbMovies.length; i++) {
+      const src = `https://cinesunidosweb.blob.core.windows.net/poster/${
+        dbMovies[i].id
+      }.jpg`;
+      movies.push({ ...dbMovies[i], src });
+    }
   }
 
   const promises = movies.map(async (movie, i) => {
@@ -62,7 +71,6 @@ export default async function scrapeMovies($: cheerio.CheerioAPI) {
     movie.src = "/movies/" + movie.id + ".webp";
   });
 
-  const dbUrl = join(Deno.cwd(), "db", "movies.json");
   await Deno.writeTextFile(dbUrl, JSON.stringify(movies), {
     create: true,
   });
