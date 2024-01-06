@@ -22,10 +22,8 @@ export default function App({ Component }: PageProps) {
           <link rel="shortcut icon" href="favicon.webp" type="image/x-icon" />
           <link rel="stylesheet" href="/styles.css" />
         </head>
-        <body f-client-nav>
-          <Partial name="body">
-            <Component />
-          </Partial>
+        <body>
+          <Component />
         </body>
       </html>
     </>
