@@ -38,6 +38,12 @@ export default async function scrapeMovies($: cheerio.CheerioAPI) {
     // MovieImages.push(src);
   });
 
+  // verificar si se encuntran peliculas
+  if (movies.length === 0) {
+    console.log("movie not found,scrapper stop");
+    return;
+  }
+
   const promises = movies.map(async (movie, i) => {
     const imgBuffer = await fetch(movie.src).then((res) => res.arrayBuffer());
     const output = join(Deno.cwd(), "static", "movies", movie.id + ".webp");
