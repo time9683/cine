@@ -3,11 +3,13 @@ import { exists } from "$std/fs/exists.ts";
 import * as cheerio from "https://esm.sh/cheerio@1.0.0-rc.12";
 import sharp from "npm:sharp";
 
+const bannersFolder = join(Deno.cwd(), "static", "banners");
+const dbUrl = join(Deno.cwd(), "db", "banners.json");
+
 export async function scrapeHome($: cheerio.CheerioAPI) {
   const imgs: string[] = [];
   const banners: string[] = [];
   // check if banners folder exist
-  const bannersFolder = join(Deno.cwd(), "static", "banners");
   exists(bannersFolder).then(async (exist) => {
     if (!exist) await Deno.mkdir(bannersFolder);
   });
@@ -22,7 +24,7 @@ export async function scrapeHome($: cheerio.CheerioAPI) {
 
   const promises = imgs.map(async (url, i) => {
     const imgBuffer = await fetch(url).then((res) => res.arrayBuffer());
-    const output = join(Deno.cwd(), "static", "banners", i + ".webp");
+    const output = join(bannersFolder, i + ".webp");
     await sharp(imgBuffer).webp({ effort: 6, quality: 70 })
       .toFile(output);
     console.log("done", i);
@@ -32,7 +34,6 @@ export async function scrapeHome($: cheerio.CheerioAPI) {
   await Promise.all(promises);
 
   // save the banners in a json file ubicate in /db/banners.json
-  const dbUrl = join(Deno.cwd(), "db", "banners.json");
   await Deno.writeTextFile(dbUrl, JSON.stringify(banners), {
     create: true,
   });
