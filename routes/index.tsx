@@ -97,7 +97,7 @@ export default function Home() {
           {movies.slice(0, 8).map((movie, index) => {
             return (
               <MovieCard
-                link="#"
+                link={`/movie/${movie.id}`}
                 logo={movie.src}
                 value={movie.title}
                 key={movie.id}

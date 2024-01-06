@@ -4,11 +4,11 @@ interface props {
   value: string;
 }
 
-export function MovieCard({ value, logo }: props) {
+export function MovieCard({ value, logo, link }: props) {
   return (
     <a
       class="hover:translate-x-2 hover:-translate-y-2 hover:opacity-95 shadow-[0px_0px_3px_1px_#585858] transition-transform"
-      href="#"
+      href={link}
     >
       <img
         width={284}
