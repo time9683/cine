@@ -3,9 +3,16 @@ import { Head } from "$fresh/runtime.ts";
 import movies from "../../db/movies.json" with { type: "json" };
 
 interface movie {
-  title: string;
   id: string;
+  title: string;
   src: string;
+  info?: {
+    descripton: string;
+    genre: string;
+    language: string;
+    format: string;
+    duration: string;
+  };
 }
 
 export const handler: Handlers<movie> = {
@@ -56,15 +63,25 @@ export default function Movie(props: PageProps<movie>) {
           </header>
 
           <div class="flex gap-4 flex-col lg:flex-row p-4">
-            <section class="flex flex-col md:flex-row items-center  p-5 gap-4  border-b lg:border-b-0  lg:border-r border-zinc-400 ">
-              <img src={props.data.src} alt={props.data.title} class="w-48" />
+            <section class="p-5   border-b lg:border-b-0  lg:border-r border-zinc-400 ">
+             <div class=" flex flex-col md:flex-row items-center gap-4">
+             <img src={props.data.src} alt={props.data.title} class="w-48" />
               <p class="text-xs lg:w-52 md:self-start text-pretty p-2">
-                Regreso de Arthur Curry, también conocido como Aquaman (Jason
-                Momoa), el heredero del reino submarino de Atlantis. Esta
-                película del universo cinematográfico de DC Cómics es la secuela
-                de Aquaman (2018), a partir del personaje creado por Paul Norris
-                y Mort Weisinger.
+                {props.data.info?.descripton}
               </p>
+
+
+             </div>
+           
+
+           
+                <ul class="flex gap-2 mt-2 bg-red-800 text-white p-1 text-sm">
+                  <li class="after:content-['-'] after:ml-2 ml-4">{props.data.info?.genre}</li>
+                  <li class="after:content-['-'] after:ml-2">{props.data.info?.language}</li>
+                  <li class="after:content-['-'] after:ml-2">{props.data.info?.format}</li>
+                  <li>{props.data.info?.duration}</li>
+                </ul>
+             
             </section>
 
             <section class="text-center flex justify-center items-center flex-1">

@@ -7,7 +7,18 @@ interface Movie {
   id: string;
   title: string;
   src: string;
+  info?: {
+    descripton: string;
+    genre: string;
+    language: string;
+    format: string;
+    duration: string;
+  };
 }
+
+const idMovie =
+  "https://www.cinesunidos.com/home/detailmovie?city=Valencia&movieId=";
+
 const dbUrl = join(Deno.cwd(), "db", "movies.json");
 const moviesFolder = join(Deno.cwd(), "static", "movies");
 
@@ -70,7 +81,31 @@ export default async function scrapeMovies($: cheerio.CheerioAPI) {
     movie.src = "/movies/" + movie.id + ".webp";
   });
 
-  await Deno.writeTextFile(dbUrl, JSON.stringify(movies), {
+  console.log("done movies main info");
+  console.log("start extra info movies");
+  const finalMovies: Movie[] = [];
+
+  const promisesExtraInfo = movies.map(async (movie, _i) => {
+    const webdata = await fetch(idMovie + movie.id).then((res) => res.text());
+    const $ = cheerio.load(webdata);
+
+    const descripton = $(".img_det_peli  p").text();
+    const extraInfo = $(".funcion_detalle").text();
+    // extraInfo = AVENTURA - ESP - DIGITAL - 124 MIN
+    const genre = extraInfo.split("-")[0].trim();
+    const language = extraInfo.split("-")[1].trim();
+    const format = extraInfo.split("-")[2].trim();
+    const duration = extraInfo.split("-")[3].trim();
+
+    finalMovies.push({
+      ...movie,
+      info: { descripton, genre, language, format, duration },
+    });
+  });
+
+  await Promise.all(promisesExtraInfo);
+
+  await Deno.writeTextFile(dbUrl, JSON.stringify(finalMovies), {
     create: true,
   });
   console.log("done write movies");

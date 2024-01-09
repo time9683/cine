@@ -3,8 +3,10 @@ import Carrusel from "../islands/Carrusel.tsx";
 import { MovieCard } from "../components/movie-card.tsx";
 import ImageDialog from "../islands/dialog-image.tsx";
 import banners from "../db/banners.json" with { type: "json" };
-import movies from "../db/movies.json" with { type: "json" };
 import { Head } from "$fresh/runtime.ts";
+import { getMovies } from "../services/movies.tsx";
+
+const movies = await getMovies({});
 
 export default function Home() {
   return (
