@@ -36,6 +36,7 @@ export default function Home() {
           content="Web de Cines Unidos donde puedes comprar tus entradas y ver las peliculas disponibles"
         />
         <meta name="twitter:image" content="https://cine.deno.dev/open.webp" />
+        <meta name="twitter:site" content="@cinesunidos" />
       </Head>
       <main class=" max-w-full sm:max-w-xl  md:max-w-3xl lg:max-w-6xl m-auto mt-2 p-2">
         <section class="flex flex-col lg:flex-row w-full">

@@ -55,6 +55,8 @@ export default function Movie(props: PageProps<movie>) {
           name="twitter:image"
           content={`https://cine.deno.dev${props.data.src}`}
         />
+        <meta name="twitter:site" content="@cinesunidos" />
+        
       </Head>
       <main class="p-2 max-w-6xl m-auto">
         <article class="bg-white min-h-[400px]">
