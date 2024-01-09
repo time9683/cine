@@ -13,7 +13,7 @@ export default function App({ Component }: PageProps) {
           <title>Cines Unidos</title>
           <meta
             name="description"
-            content="CinesUnidos, el cine en un click. Compra y reservación de boletos, downloads, información de películas y últimos estrenos de la cartelera cinematográfica de Venezuela."
+            content="CinesUnidos,Compra y reservación de boletos, información de películas y últimos estrenos de la cartelera cinematográfica de Venezuela."
           />
           <meta
             name="keywords"
