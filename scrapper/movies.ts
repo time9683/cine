@@ -1,7 +1,9 @@
 import { join } from "$std/path/join.ts";
 import { exists } from "$std/fs/exists.ts";
 import * as cheerio from "https://esm.sh/cheerio@1.0.0-rc.12";
+import getFunctionsFromMovie from "./functions.tsx";
 import sharp from "npm:sharp";
+
 
 interface Movie {
   id: string;
@@ -12,12 +14,24 @@ interface Movie {
     genre: string;
     language: string;
     format: string;
-    duration: string;
-  };
+    duration: string
+};
+functions?: {}  ;
+
 }
+
+interface func{
+  cinema:string;
+  hours:string[];
+  room:string;
+  clasification:string;
+  
+  
+  }
 
 const idMovie =
   "https://www.cinesunidos.com/home/detailmovie?city=Valencia&movieId=";
+
 
 const dbUrl = join(Deno.cwd(), "db", "movies.json");
 const moviesFolder = join(Deno.cwd(), "static", "movies");
@@ -104,6 +118,15 @@ export default async function scrapeMovies($: cheerio.CheerioAPI) {
   });
 
   await Promise.all(promisesExtraInfo);
+
+
+  // get functions from movie
+  console.log("start functions movies");
+  for (let i = 0; i < finalMovies.length; i++) {
+    const functions = await getFunctionsFromMovie(finalMovies[i].id);
+    finalMovies[i].functions = functions;
+  }
+
 
   await Deno.writeTextFile(dbUrl, JSON.stringify(finalMovies), {
     create: true,
