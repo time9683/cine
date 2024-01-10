@@ -11,6 +11,7 @@ import * as $index from "./routes/index.tsx";
 import * as $movie_id_ from "./routes/movie/[id].tsx";
 import * as $movie_index from "./routes/movie/index.tsx";
 import * as $Carrusel from "./islands/Carrusel.tsx";
+import * as $DayFuns from "./islands/DayFuns.tsx";
 import * as $Dialog from "./islands/Dialog.tsx";
 import * as $Select from "./islands/Select.tsx";
 import * as $dialog_image from "./islands/dialog-image.tsx";
@@ -29,6 +30,7 @@ const manifest = {
   },
   islands: {
     "./islands/Carrusel.tsx": $Carrusel,
+    "./islands/DayFuns.tsx": $DayFuns,
     "./islands/Dialog.tsx": $Dialog,
     "./islands/Select.tsx": $Select,
     "./islands/dialog-image.tsx": $dialog_image,
