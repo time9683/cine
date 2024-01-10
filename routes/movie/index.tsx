@@ -4,7 +4,7 @@ export default function Movies() {
   return (
     <>
       <Head>
-        <title>Cines Unidos</title>
+        <title>Cines Unidos - Peliculas</title>
       </Head>
 
       <main class="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-4 p-4 gap-8">
