@@ -1,6 +1,7 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import movies from "../../db/movies.json" with { type: "json" };
+import DayFuns from "../../islands/DayFuns.tsx";
 
 interface movie {
   id: string;
@@ -11,9 +12,22 @@ interface movie {
     genre: string;
     language: string;
     format: string;
-    duration: string;
-  };
+    duration: string
+};
+functions: {
+  [key: string]: func[];
+}  ;
+
 }
+
+interface func{
+  cinema:string;
+  hours:string[];
+  room:string;
+  clasification:string;
+  
+  
+  }
 
 export const handler: Handlers<movie> = {
   GET(_req, ctx) {
@@ -26,6 +40,10 @@ export const handler: Handlers<movie> = {
 };
 
 export default function Movie(props: PageProps<movie>) {
+
+  const today = new Date();
+  const day = today.getDate();
+
   return (
     <>
       <Head>
@@ -59,7 +77,7 @@ export default function Movie(props: PageProps<movie>) {
         
       </Head>
       <main class="p-2 max-w-6xl m-auto">
-        <article class="bg-white min-h-[400px]">
+        <article class="bg-white min-h-[400px] relative">
           <header class="bg-gradient-to-b from-red-600 to-red-800 p-2">
             <h1 class="text-lg text-white">{props.data.title}</h1>
           </header>
@@ -86,10 +104,11 @@ export default function Movie(props: PageProps<movie>) {
              
             </section>
 
-            <section class="text-center flex justify-center items-center flex-1">
-              <h2 class="bg-red-600 text-white text-xl p-2 ">
-                En construcion
-              </h2>
+            <section class="text-center flex  p-2 flex-1">
+            <DayFuns data={props.data.functions} />
+
+
+            
             </section>
           </div>
         </article>
