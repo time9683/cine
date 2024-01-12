@@ -1,7 +1,5 @@
-import { join } from "$std/path/join.ts";
-import { exists } from "$std/fs/exists.ts";
 import * as cheerio from "https://esm.sh/cheerio@1.0.0-rc.12";
-import sharp from "npm:sharp";
+
 
 interface Movie {
   id: string;
