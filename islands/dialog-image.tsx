@@ -19,10 +19,10 @@ export default function imageDialog() {
           ref.current?.showModal();
         }}
         alt="El Cascanueces entradas"
-        src="https://az693035.vo.msecnd.net/mercadeo/banner-el-cascanueces.jpg"
+        src="/banner-el-cascanueces.webp"
       />
       <Dialog
-        image="https://az693035.vo.msecnd.net/mercadeo/banner-el-cascanueces.jpg"
+        image="/banner-el-cascanueces.webp"
         onClose={close}
         refe={ref}
       />
