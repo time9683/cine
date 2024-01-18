@@ -5,9 +5,10 @@ on:
     branches:
       - master
 
-# execute each 3 minutes
+# execute each day at 9  am
   schedule:
-      - cron: "*/3 * * * *"
+    - cron: "0 9 * * *"
+
 
 
 
