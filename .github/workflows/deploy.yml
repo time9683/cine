@@ -7,7 +7,7 @@ on:
 
 # execute each 3 minutes
   schedule:
-    - cron: "*/3 * * * *"
+      - cron: "*/3 * * * *"
 
 
 
