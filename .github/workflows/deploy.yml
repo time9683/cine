@@ -4,6 +4,14 @@ on:
   push:
     branches:
       - master
+
+# execute each 3 minutes
+  schedule:
+    - cron: "*/3 * * * *"
+
+
+
+
 jobs:
   deploy:
     name: Deploy
