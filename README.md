@@ -1,6 +1,6 @@
 # Cine 
 
-Proyecto comunitario para aprender
+Proyecto sobre una pagina web de cine, donde se puede ver la cartelera de peliculas, ver los detalles de cada pelicula, ver los horarios de cada pelicula y simular una compra de entradas.
 
 ## como iniciar 
 
