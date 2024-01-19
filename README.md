@@ -1,16 +1,23 @@
-# Fresh project
+# Cine 
 
-Your new Fresh project is ready to go. You can follow the Fresh "Getting
-Started" guide here: https://fresh.deno.dev/docs/getting-started
+Proyecto comunitario para aprender
 
-### Usage
+## como iniciar 
 
-Make sure to install Deno: https://deno.land/manual/getting_started/installation
+El proyecto esta realizado en deno con deno Fresh asi que es necesario tener deno instalado.
 
-Then start the project:
-
-```
+para inicializar el proyecto:
+```bash
 deno task start
 ```
 
-This will watch the project directory and restart as necessary.
+
+## Tecnologias
+* [Deno](https://deno.land)
+* [Talwindcss](https://tailwindcss.com)
+* [Deno Fresh](https://fresh.deno.dev/)
+* [Preact](https://preactjs.com/)
+
+## Contribuir
+
+Si quieres contribuir al proyecto puedes hacerlo, solo tienes que hacer un fork y luego un pull request.
