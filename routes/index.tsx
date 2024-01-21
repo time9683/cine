@@ -53,7 +53,7 @@ export default function Home() {
             />
             <Card
               value="proximos estrenos"
-              link="#"
+              link="/Estrenos"
               logo="/estrenos.png"
             />
           </div>

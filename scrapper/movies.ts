@@ -85,7 +85,7 @@ export default async function scrapeMovies($: cheerio.CheerioAPI) {
       quality: 70,
     })
       .toFile(output);
-    console.log("done", i);
+    // console.log("done", i);
   });
 
   await Promise.all(promises);

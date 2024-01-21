@@ -16,7 +16,7 @@ export async function scrapeHome($: cheerio.CheerioAPI) {
 
   // get banners  from a class "pelivelotopimg"
   $(".carousel-inner  .pelivelotopimg").each((_i, el) => {
-    console.log($(el).attr("src"));
+    // console.log($(el).attr("src"));
     const url = $(el).attr("src");
     if (!url) return;
     imgs.push(url);
@@ -27,7 +27,7 @@ export async function scrapeHome($: cheerio.CheerioAPI) {
     const output = join(bannersFolder, i + ".webp");
     await sharp(imgBuffer).webp({ effort: 6, quality: 70 })
       .toFile(output);
-    console.log("done", i);
+    // console.log("done", i);
     banners.push("/banners/" + i + ".webp");
   });
 

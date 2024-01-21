@@ -43,7 +43,7 @@ const month = today.getMonth() + 1;
 // make a array with the next 2 days
 const days = [day, day + 1, day + 2];
 
-console.log(days)
+// console.log(days)
 const Functions = new Map();
 
 const PromisesFetching = days.map(async (day) => {
@@ -66,7 +66,7 @@ const PromisesFetching = days.map(async (day) => {
 })
 
 await Promise.all(PromisesFetching);
-console.log(Functions)
+// console.log(Functions)
 return mapToObject(Functions)  ;
 }
 
