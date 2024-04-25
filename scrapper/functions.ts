@@ -31,8 +31,8 @@ const mapToObject = (map :Map<string, func[]>)  => Object.fromEntries(map.entrie
 
 
 
-
-const getFunctionUrl =  (dia:string,mes:string)  => `https://www.cinesunidos.com/Home/Search/Valencia/HO00004775/${dia}/${mes}/2024/False`
+//
+const getFunctionUrl =  (movideId:string,dia:string,mes:string)  => `https://www.cinesunidos.com/Home/Search/Valencia/${movideId}/${dia}/${mes}/2024/False`
 
 
 export default async function getFunctionsFromMovie(id:string){
@@ -47,7 +47,7 @@ const days = [day, day + 1, day + 2];
 const Functions = new Map();
 
 const PromisesFetching = days.map(async (day) => {
-    const response = await fetch(getFunctionUrl(day.toString(), month.toString()));
+    const response = await fetch(getFunctionUrl(id,day.toString(), month.toString()));
     const html = await response.text();
     const $ = cheerio.load(html);
     const functions : func[] = [];
